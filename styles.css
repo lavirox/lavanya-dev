@@ -5,7 +5,7 @@
 }
 
 h1{
-    font-size: 30px;
+    font-size: 35px;
 }
 
 h2{
@@ -17,13 +17,17 @@ h1, h2, nav, p, img{
     text-align: center;
 }
 
+
 body{
     text-align: center;
     font-family: arial;
     display: flex;
     flex-direction: column;
-    gap: 23px;
-    padding-top: 23px;
+    gap: 40px;
+    padding-top: 50px;
+    width: 600px;
+    margin: 0 auto;
+
 }
 
 nav a{
@@ -38,7 +42,7 @@ nav a:hover{
 }
 
 p{
-    font-size: 16px;
+    font-size: 15px;
 }
 
 img{
