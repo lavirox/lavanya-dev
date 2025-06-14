@@ -1,0 +1,5 @@
+{
+    "name": "lav",
+    "compatibility_date": "2025-06-14", 
+    "main": "worker.js"
+  }
