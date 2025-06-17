@@ -45,9 +45,35 @@ p{
     font-size: 15px;
 }
 
+.new_page{
+    margin-top:50px; 
+    margin-left: 35px; 
+    font-size:16px; 
+    text-align: left;
+}
+
+.messages ul{
+    list-style-type: none;
+    font-size:14px;
+    margin-left: 35px; 
+    text-align: left;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
 img{
     width: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+input{
+        width: 400px;
+        margin-left: 35px;
+        margin-right: auto;
+        display: block;
+
 }
