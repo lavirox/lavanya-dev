@@ -109,7 +109,7 @@ async function loadMessages() {
     const { data: messages, error } = await supabase
         .from('guestbook_entries')
         .select('*')
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: true });
     
     const messagesList = document.getElementById('messages_list');
     
@@ -143,11 +143,10 @@ function addMessageToList(message) {
     
     messageEl.innerHTML = `
         <div class="message-header">
-            <img class="message-avatar" src="${message.avatar_url}" alt="${message.username}">
             <span class="message-username">${message.username}</span>
             <span class="message-date">${date}</span>
         </div>
-        <div class="message-content">${message.message}</div>
+        <div class="message-content" style="font-style: normal;">${message.message}</div>
     `;
     
     messagesList.insertBefore(messageEl, messagesList.firstChild);

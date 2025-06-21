@@ -19,25 +19,26 @@ h1, h2, nav, p, img{
 
 
 body{
-    text-align: center;
     font-family: arial;
     display: flex;
     flex-direction: column;
-    gap: 40px;
     padding-top: 50px;
     width: 600px;
     margin: 0 auto;
-
 }
 
-nav a{
+.content-align {
+    margin-left: 35px;
+}
+
+a{
     font-size: 16px;
     color: black;
     margin: 10px;
     text-decoration: none;
 }
 
-nav a:hover{
+a:hover{
     text-decoration: underline;
 }
 
@@ -45,39 +46,149 @@ p{
     font-size: 15px;
 }
 
-.new_page{
-    margin-top:50px; 
-    margin-left: 35px; 
-    font-size:16px; 
+p.content-align {
     text-align: left;
+    margin-bottom: 18px;
 }
 
 .messages ul{
     list-style-type: none;
-    font-size:14px;
-    margin-left: 35px; 
     text-align: left;
     font-style: italic;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 16px;
+    margin-top: 30px;
 }
 
 img{
-    width: 100px;
+    max-width: 100%;
+    width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-input{
-        width: 400px;
-        margin-left: 35px;
-        margin-right: auto;
-        display: block;
+#user_avatar {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    margin-left: 0;
+    margin-right: 0;
+    display: inline;
+}
 
+input{
+    width: 400px;
+    margin-left: 35px;
+    margin-right: auto;
+    display: block;
 }
 
 .hidden{
     display: none;
+}
+
+
+.nav_signed_in{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 32px;
+}
+
+.nav_signed_out {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 32px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.homepage-doodle {
+    width: 120px;
+    max-width: 90vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.home > *:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+    padding-top: 20px;
+    margin: 0;
+  }
+  .content-align {
+    margin-left: 10px;
+  }
+  .nav_signed_in {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .nav_signed_out {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .messages ul {
+    font-size: 13px;
+    gap: 4px;
+    margin-left: 10px;
+  }
+  .new_page {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  img {
+    max-width: 80px;
+    width: 100%;
+  }
+  #user_avatar {
+    width: 20px;
+    height: 20px;
+  }
+  input, textarea {
+    width: 90vw;
+    min-width: 0;
+    margin-left: 10px;
+
+  }
+  textarea {
+    margin-bottom: 20px;
+  }
+  #message_form {
+    margin-bottom: 32px;
+  }
+  .messages {
+    padding-top: 32px;
+  }
+
+  nav {
+    margin-left: 10px;
+  }
+  .homepage-doodle {
+    width: 70px;
+    max-width: 90vw;
+    margin-top: 16px;
+  }
+  .home {
+    gap: 18px;
+  }
+  .home > *:not(:last-child) {
+    margin-bottom: 18px;
+  }
+}
+
+textarea::placeholder {
+    font-family: arial;
 }

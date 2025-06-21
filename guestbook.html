@@ -10,38 +10,40 @@
 
 <body>
 
-    <div class="new_page">
-        guestbook
-    </div>
-
     <div id="github_authentication">
         <div id="signed_out">
-            <p>leave a message!</p>
-            <button onclick="signInWithGithub()">sign in with github</button>
+            <div class="nav_signed_out content-align">
+                <div class="new_page" style="flex-grow: 1">
+                    guestbook
+                </div>
+                <button onclick="signInWithGithub()">sign in with github</button>
+                <a href="index.html">home</a>
+            </div>
+            <p class="content-align">sign in with github to leave a message!</p>
         </div>
 
-        <div id="signed_in" class="hidden">
-            <div class="user_info">
-                <img id="user_avatar" src="" alt="Avatar">
-                <span id="user_name"></span>
+    <div id="signed_in" class="hidden">
+        <div class="nav_signed_in content-align">
+            <div class="new_page" style="flex-grow: 1">
+                guestbook
             </div>
+            <img id="user_avatar" src="" alt="Avatar">
+            <span id="user_name"></span>
             <button onclick="signOut()">sign out</button>
+            <a href="index.html">home</a>
         </div>
     </div>
 
-    <div id="message_form" class="hidden">
+    <div id="message_form" class="hidden content-align">
         <textarea id="message_input" placeholder="leave a message..."></textarea>
         <button onclick="submitMessage()" id="submit-button">post</button>
     </div>
     
     <div class="messages">
-        <ul id="messages_list">   
+        <ul id="messages_list" class="content-align">   
             <li class="loading">loading messages...</li>
         </ul>
     </div>
-    <nav style = "text-align: left; margin-left: 25px;">
-        <a href="index.html">home</a>
-    </nav>
 
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="guestbook.js"></script>
