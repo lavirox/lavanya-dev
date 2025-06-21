@@ -112,11 +112,12 @@ input{
 }
 
 .nav_signed_in button, .nav_signed_out button {
-    padding: 0 12px;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
+    padding: 0;
+    line-height: normal;
+    display: inline-block;
     height: auto;
+    min-width: 0;
+    vertical-align: middle;
 }
 
 .flex-spacer {
