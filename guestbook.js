@@ -64,6 +64,7 @@ async function checkIfSignedIn() {
             { event: 'INSERT', schema: 'public', table: 'guestbook_entries' }, 
             (payload) => {
                 addMessageToList(payload.new);
+                loadMessages(); // Fallback: ensure all messages are loaded in case of missed/delayed events
             }
         )
         .subscribe();
