@@ -95,14 +95,31 @@ input{
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
-    margin-bottom: 32px;
 }
 
 .nav_signed_out {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 32px;
+}
+
+/* Remove problematic flex, height, and padding from nav children */
+.nav_signed_in > *, .nav_signed_out > * {
+    font-size: 16px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.nav_signed_in button, .nav_signed_out button {
+    padding: 0 12px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.flex-spacer {
+    flex-grow: 1;
 }
 
 .home {
@@ -120,6 +137,15 @@ input{
 
 .home > *:not(:last-child) {
     margin-bottom: 32px;
+}
+
+.new_page {
+    font-size: 16px;
+    font-family: arial;
+    line-height: 1.5;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
 
 @media (max-width: 600px) {
