@@ -63,8 +63,7 @@ async function checkIfSignedIn() {
         .on('postgres_changes', 
             { event: 'INSERT', schema: 'public', table: 'guestbook_entries' }, 
             (payload) => {
-                addMessageToList(payload.new);
-                loadMessages(); // Fallback: ensure all messages are loaded in case of missed/delayed events
+                loadMessages(); // Only reload all messages for consistency
             }
         )
         .subscribe();
