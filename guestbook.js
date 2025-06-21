@@ -1,0 +1,162 @@
+const SUPABASE_URL = 'https://uwayfesxnspreclmsotg.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3YXlmZXN4bnNwcmVjbG1zb3RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NjQzMTcsImV4cCI6MjA2NjA0MDMxN30.1wd_w4yYuyoOXCTOfj0-_xyN4oZNx31bk_wFQPAC4aQ';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let current_user = null;
+
+async function signInWithGithub() {
+    const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+        options: {
+            redirectTo: window.location.origin + window.location.pathname
+        }
+    });
+    if (error) {
+        alert('Error signing in: ' + error.message);
+    }
+}
+
+async function signOut() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        alert('Error signing out: ' + error.message);
+    }
+}
+
+function showSignedInState() {
+    document.getElementById('signed_out').classList.add('hidden');
+    document.getElementById('signed_in').classList.remove('hidden');
+    document.getElementById('message_form').classList.remove('hidden');
+    document.getElementById('user_name').textContent = current_user.user_metadata.user_name;
+    document.getElementById('user_avatar').src = current_user.user_metadata.avatar_url;
+}
+
+function showSignedOutState() {
+    document.getElementById('signed_out').classList.remove('hidden');
+    document.getElementById('signed_in').classList.add('hidden');
+    document.getElementById('message_form').classList.add('hidden');
+}
+
+async function checkIfSignedIn() {
+    const { data: { user } } = await supabase.auth.getUser();
+    current_user = user;
+    if (user) {
+        showSignedInState();
+    } else {
+        showSignedOutState();
+    }
+
+    loadMessages();
+
+    supabase.auth.onAuthStateChange((event, session)=>{
+        if (session) {
+            current_user = session.user;
+            showSignedInState();
+        } else {
+            current_user = null;
+            showSignedOutState();
+        }
+    });   
+    
+    // listening for msgs
+    supabase
+        .channel('guestbook_entries')
+        .on('postgres_changes', 
+            { event: 'INSERT', schema: 'public', table: 'guestbook_entries' }, 
+            (payload) => {
+                addMessageToList(payload.new);
+            }
+        )
+        .subscribe();
+
+}
+
+async function submitMessage(){
+    const messageInput = document.getElementById('message_input')
+    const message = messageInput.value.trim();
+
+    if(!message){
+        alert('please enter a message!');
+        return;
+    }
+
+    const submitButton = document.getElementById('submit-button')
+    submitButton.disabled = true;
+    submitButton.textContent = 'posting...';
+
+    const { error } = await supabase
+        .from('guestbook_entries')
+        .insert([
+            {
+                user_id: current_user.id,
+                username: current_user.user_metadata.user_name,
+                avatar_url: current_user.user_metadata.avatar_url,
+                message: message
+            }
+        ]);
+        
+        if (error) {
+            alert('error posting message: ' + error.message);
+        } else {
+            messageInput.value = '';
+            loadMessages(); 
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'post message';
+}
+
+async function loadMessages() {
+    const { data: messages, error } = await supabase
+        .from('guestbook_entries')
+        .select('*')
+        .order('created_at', { ascending: false });
+    
+    const messagesList = document.getElementById('messages_list');
+    
+    if (error) {
+        messagesList.innerHTML = '<li class="loading">error loading messages</li>';
+        return;
+    }
+    
+    if (messages.length === 0) {
+        messagesList.innerHTML = '<li class="loading">no messages yet. be the first!</li>';
+        return;
+    }
+    
+    messagesList.innerHTML = '';
+    messages.forEach(message => {
+        addMessageToList(message);
+    });
+}
+
+function addMessageToList(message) {
+    const messagesList = document.getElementById('messages_list');
+    
+    if (messagesList.innerHTML.includes('no messages yet') || messagesList.innerHTML.includes('loading')) {
+        messagesList.innerHTML = '';
+    }
+    
+    const messageEl = document.createElement('li');
+    messageEl.className = 'message-item';
+    
+    const date = new Date(message.created_at).toLocaleString();
+    
+    messageEl.innerHTML = `
+        <div class="message-header">
+            <img class="message-avatar" src="${message.avatar_url}" alt="${message.username}">
+            <span class="message-username">${message.username}</span>
+            <span class="message-date">${date}</span>
+        </div>
+        <div class="message-content">${message.message}</div>
+    `;
+    
+    messagesList.insertBefore(messageEl, messagesList.firstChild);
+}
+
+window.signInWithGithub = signInWithGithub;
+window.signOut = signOut;
+
+// Initialization
+checkIfSignedIn();
+
+

@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>guestbook</title>
-    <link rel="stylesheet" href="styles.css"
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
     <div class="new_page">
         guestbook
     </div>
-    <input style= "margin-bottom:-30px;"placeholder="leave a message">
+
+    <div id="github_authentication">
+        <div id="signed_out">
+            <p>leave a message!</p>
+            <button onclick="signInWithGithub()">sign in with github</button>
+        </div>
+
+        <div id="signed_in" class="hidden">
+            <div class="user_info">
+                <img id="user_avatar" src="" alt="Avatar">
+                <span id="user_name"></span>
+            </div>
+            <button onclick="signOut()">sign out</button>
+        </div>
+    </div>
+
+    <div id="message_form" class="hidden">
+        <textarea id="message_input" placeholder="leave a message..."></textarea>
+        <button onclick="submitMessage()" id="submit-button">post</button>
+    </div>
+    
     <div class="messages">
-        <ul>   
-            <li>hello</li>
-            <li>hi</li>
+        <ul id="messages_list">   
+            <li class="loading">loading messages...</li>
         </ul>
     </div>
     <nav style = "text-align: left; margin-left: 25px;">
         <a href="index.html">home</a>
     </nav>
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="guestbook.js"></script>
 </body>
 </html>
