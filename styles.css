@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #e5f7f6;
+
 }
 
 h1{
@@ -25,10 +27,6 @@ body{
     padding-top: 50px;
     width: 600px;
     margin: 0 auto;
-    background-image: url("heart_transparent.png");
-    background-size: 600px;
-    background-repeat: repeat;
-    background-position: 285px 14px;
 }
 
 .content-align {
