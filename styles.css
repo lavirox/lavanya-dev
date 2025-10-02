@@ -25,6 +25,10 @@ body{
     padding-top: 50px;
     width: 600px;
     margin: 0 auto;
+    background-image: url("heart_transparent.png");
+    background-size: 600px;
+    background-repeat: repeat;
+    background-position: 285px 14px;
 }
 
 .content-align {
