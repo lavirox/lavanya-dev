@@ -120,6 +120,8 @@ input{
     height: auto;
     min-width: 0;
     vertical-align: middle;
+    border-radius: 3px;
+    padding: 3px;
 }
 
 .flex-spacer {
