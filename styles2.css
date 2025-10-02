@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e5f7f6;
+
+}
+
+h1{
+    font-size: 35px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h1, h2, nav, p, img{
+    font-family: arial;
+    text-align: center;
+}
+
+
+body{
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+a{
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+p{
+    font-size: 15px;
+}
+
+p.content-align {
+    margin-bottom: 18px;
+    margin-top: 32px;
+}
+
+
+img{
+    max-width: 100%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+
+.nav_signed_in{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav_signed_out {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Remove problematic flex, height, and padding from nav children */
+.nav_signed_in > *, .nav_signed_out > * {
+    font-size: 16px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.nav_signed_in button, .nav_signed_out button {
+    padding: 0;
+    line-height: normal;
+    display: inline-block;
+    height: auto;
+    min-width: 0;
+    vertical-align: middle;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.homepage-doodle {
+    width: 120px;
+    max-width: 90vw;
+    display: block;
+    margin: 0 auto;
+}
+
