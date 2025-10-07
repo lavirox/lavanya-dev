@@ -1,56 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .top-nav {
-        text-align: left !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      .top-nav a {
-        margin: 0 !important;
-      }
-      .top-nav img {
-        margin-left: auto !important;
-        margin-right: 0 !important;
-        display: inline !important;
-      }
-      .badge-container {
-        display: flex !important;
-        gap: 0px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        text-align: left !important;
-        margin-left: -10px !important;
-      }
-      .badge-container img {
-        display: inline !important;
-        margin: 0 !important;
-      }
-    </style>
+    <title>blog</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <nav class="top-nav">
-      <a href="index.html">home</a>
-      <img style="width: 80px" src="heart animation.gif" />
-    </nav>
-    not much to see here...
-    <!-- <h4 style="margin-top:20px; font-style: italic;">just off the information superhighway</h4> -->
-    <!-- <p style="margin-top:5px; font-size:16px; text-align: left;">I recently journied through the rabbithole that is <a style="margin:0px" href="https://neocities.org">neocities</a>, and
- I am filled with determination to make my own website just as expressive and imaginative. I love
- the philosophy behind taking back the internet as a place to be unapologetically yourself. And I'm
- excited to collect those fun badges!!! </p> -->
+    <div class="outer">
+      <div class="header">
+        <div class="site-title">
+          <a href="home.html">Lavanya Sharma</a>
+          <div class="subtitle">software dev @ uc berkeley</div>
+        </div>
+      </div>
+      <marquee class="updates">
+        <div class="update">2021-10-07 // uploaded projects</div>
+        <div class="update">2025-10-07 // brand new layout!</div>
+      </marquee>
+      <div class="nav">
+        <a class="nav-item" href="home.html">home</a>
+        <a class="nav-item active" href="blog.html">blog</a>
+        <a class="nav-item" href="stuff.html">stuff</a>
+        <a class="nav-item" href="about.html">about</a>
+        <a class="nav-item nav-top" href="index.html">top</a>
+      </div>
+      <img class="doodle" src="img/doodleicon.png" />
+      <div class="white">
+        <div class="main">
+          <div class="content">
+            <!-- PAGE CONTENT STARTS HERE! -->
 
-    <!-- <div class="badge-container">
-<a href="https://melonking.net/"><img src="melonking.gif" alt="melonking" title="melonking: 3d, videogames, art, music, 90s" loading="lazy"></a>
-<a href="https://i-land.online/travel"><img src="i-land-button8.png" alt="iland" title="iland" loading="lazy"></a>
-</div> -->
+            <h1>Blog</h1>
+            <p>hello...</p>
+            <h2>There's not yet much to see here</h2>
+            <i>October 7th, 2025</i>
+            <p>
+              I'm excited to start writing more, though. I have lots of thoughts
+              saved up to share.
+            </p>
+            <p>
+              I've written a lot of my thoughts in the same one notes page in
+              the iOS Notes app ever since I've had an iPhone. Recently though,
+              I bought a small notebook to write things down with a pen. I like
+              taking out the item that represents what I'm doing when I do it.
+              It's really tactile and enjoyable for reasons I don't know how to
+              explain. Taking out a book to read, a notebook to write, a compact
+              mirror to fix my makeup, whatever else. I'm trying to find more of
+              these, I'll keep a list here. Let me know if you have any ideas.
+            </p>
+            <ul>
+              <li>Pocket notebook</li>
+              <li>Kindle</li>
+              <li>Compact mirror</li>
+            </ul>
+            <br />
+            <br /><br />
+            <hr />
+            <!-- <b>Older Posts</b>
+            <br />
+            <a href="blog-2025-01">2025 Jan to July</a><br />
+            <a href="blog-2024-07">2024 July to Dec</a><br /> -->
+
+            <!-- PAGE CONTENT ENDS HERE! -->
+          </div>
+          <div class="side">
+            <iframe class="sidebar" src="sidebar.html"></iframe>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

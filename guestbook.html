@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>guestbook</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="guest.css">
 </head>
 
 <body>
 
+    <div class="guestbook-container">
     <div id="github_authentication">
         <div id="signed_out">
             <div class="nav_signed_out content-align">
                 <span class="new_page">guestbook</span>
                 <span class="flex-spacer"></span>
                 <button onclick="signInWithGithub()">sign in with github</button>
-                <a href="index.html">home</a>
+                <a href="home.html">home</a>
             </div>
             <p class="content-align">sign in with github to leave a message!</p>
         </div>
@@ -43,6 +44,7 @@
         </ul>
     </div>
 
+    </div>
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="guestbook.js"></script>
 </body>

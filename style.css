@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/* new style */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: lucida grande,verdana,arial,helvetica;
+	font-size: 12px;
+}
+
+img {
+	max-width: 50%;
+}
+
+.outer {
+	width: 1000px;
+	margin: auto;
+	position: relative;
+}
+
+.header {
+	background: #666;
+	width: 100%;
+	height: 160px;
+	border: 1px solid black;
+	background-image: url(img/banner_bg.jpg);
+	background-size: cover;
+}
+
+.white {
+	background: #FFF;
+	border: 1px solid black;
+	padding: 24px;
+	min-height: calc(100vh - 280px);
+	margin-bottom: 2rem;
+}
+
+.nav-item {
+	background: #FFF;
+	display: inline-block;
+	border: 1px solid #000;
+	position: relative;
+	padding: 12px 24px;
+	bottom: -1px;
+}
+
+.nav-item.active {
+	border-bottom: 1px solid #FFF;
+}
+
+.content {
+	width: 680px;
+	float: left;
+	padding-bottom: 1rem;
+}
+
+.side {
+	width: 250px;
+	height: 100%;
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.side-box {
+	background: #EEE;
+	padding: 12px;
+	min-height: 200px;
+}
+
+textarea.code {
+	background: #000;
+	color: #FFF;
+	font-family: monospace;
+	padding: 12px;
+	width: 100%;
+}
+
+.breadcrumbs {
+	background: #EEE;
+	display: inline-block;
+	padding: 3px 6px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #666;
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+}
+
+.nav a {
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+h1 {
+	background: #000;
+	color: #FFF;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 3px 6px;
+}
+
+h2 {
+	font-size: 1em;
+	border-bottom: 1px dotted #000;
+	margin-top: 2rem;
+}
+
+.border {
+	border: 1px solid #000;
+}
+
+h2 a {
+	text-decoration: none;
+	color: #000;
+}
+
+.nav-item.nav-top {
+	border: none;
+}
+
+.site-title {
+	color: #FFF;
+	margin-top: 40px;
+	margin-left: 70px;
+}
+
+.site-title a {
+	color: #FFF;
+	text-decoration: none;
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 45px;
+}
+
+.update {
+	display: inline;
+	margin-right: 24px;
+}
+
+.updates {
+	font-size: 11px;
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+
+.doodle {
+	position: absolute;
+	width: 360px;
+	right: 20px;
+	top: -10px;
+}
+
+.post-content img {
+	max-width: 90%;
+}
+
+.muted {
+	opacity: 0.3;
+}
+
+.recent-image img {
+	width: 50px;
+	border: 1px solid;
+}
+
+.sidebar {
+	border: 0;
+	width: 100%;
+	height: 750px;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px dotted black;
+	margin: 2rem 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 6px 12px;
+	border: 1px solid #000;
+    vertical-align: top;
+}
+
+th {
+	background: #EEE;
+	color: black;
+}
+
+table.border-0 th, table.border-0 td {
+    border: 0;
+}
+
+.border-0 {
+    border: none;
+}
+
+table img {
+	max-width: 100%;
+}

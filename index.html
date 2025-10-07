@@ -1,37 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lav</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>welcome</title>
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+      body {
+        font-family: lucida grande, verdana, arial, helvetica;
+        font-size: 12px;
+        background-color: white;
+      }
+
+      .container {
+        width: 400px;
+        height: 500px;
+        margin: auto;
+        margin-top: 170px;
+        position: relative;
+      }
+
+      h1 {
+        font-family: "Nanum Pen Script", cursive;
+        margin: 0;
+        padding: 0;
+        font-size: 46px;
+        font-weight: normal;
+        line-height: 42px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
+      .white {
+        border: 1px solid #000;
+        padding: 12px;
+        margin: 6px 0;
+        background-color: white;
+      }
+
+      .banner {
+        height: 100px;
+        border: 1px solid black;
+        background: #666;
+        text-align: end;
+        padding: 12px;
+        background-image: url(img/front_bg.jpg);
+        background-position: 1px;
+        background-size: cover;
+        color: #eee;
+        font-size: 10px;
+      }
+
+      .nav a {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        margin-top: 12px;
+        border-bottom: 1px dotted black;
+      }
+
+      .updates {
+        width: 340px;
+        margin-left: 60px;
+        overflow: hidden;
+        height: 14px;
+      }
+
+      .update {
+        display: inline;
+        margin-right: 24px;
+      }
+
+      .item-desc {
+        font-size: 12px;
+      }
+
+      img {
+        position: absolute;
+        height: 670px;
+        top: -130px;
+        pointer-events: none;
+        left: -145px;
+      }
+
+      .title {
+        margin-left: 110px;
+      }
+    </style>
   </head>
-  <body class="home">
-    <img src="heart_transparent.png" style="width: 200px" />
-    <h1>lavanya sharma</h1>
-    <h2>software dev @ uc berkeley</h2>
-    <nav>
-      <a href="blog.html">blog</a>
-      <a href="projects.html">projects</a>
-      <a href="art.html">art</a>
-      <a href="guestbook.html">guestbook</a>
-    </nav>
-    <p>
-      How I came to Spaceland, and what I saw there: An unspeakable horror
-      seized me. There was a darkness; then a dizzy, sickening sensation of
-      sight that was not like seeing; I saw a Line that was no Line; Space that
-      was not Space: I was myself, and not myself. When I could find voice, I
-      shrieked aloud in agony, "Either this is madness or it is Hell." "It is
-      neither," calmly replied the voice of the Sphere, "it is Knowledge; it is
-      Three Dimensions; open your eye once again and try to look steadily."
-    </p>
-    <!-- <img src="doodle.jpeg" class="homepage-doodle"> -->
-    <nav>
-      <a href="https://github.com/lavirox">github</a>
-      <a
-        href="https://devpost.com/lavirox?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-        >devpost</a
-      >
-    </nav>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Lavanya Sharma</h1>
+        <div class="subtitle">software developer @ uc berkeley</div>
+      </div>
+
+      <div class="white">
+        <div class="banner">my corner of the internet :o</div>
+        <div class="nav">
+          <div class="item">
+            <a href="home.html">home</a>
+            <div class="item-desc">hello and welcome</div>
+          </div>
+          <div class="item">
+            <a href="blog.html">blog</a>
+            <div class="item-desc">talk talk</div>
+          </div>
+          <div class="item">
+            <a href="stuff.html">stuff</a>
+            <div class="item-desc">things to share</div>
+          </div>
+          <div class="item">
+            <a href="about.html">about</a>
+            <div class="item-desc">about me</div>
+          </div>
+        </div>
+      </div>
+      <marquee class="updates">
+        <div class="update">2021-10-07 // uploaded projects</div>
+        <div class="update">2025-10-07 // brand new layout!</div>
+      </marquee>
+    </div>
   </body>
 </html>
