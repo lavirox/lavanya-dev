@@ -7,7 +7,7 @@ async function loadMessages() {
         .from('guestbook_entries')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(7);
+        .limit(5);
     
     if (error) {
         console.error('Error loading messages:', error);
