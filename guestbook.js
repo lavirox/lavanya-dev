@@ -1,5 +1,6 @@
-const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = "https://uwayfesxnspreclmsotg.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3YXlmZXN4bnNwcmVjbG1zb3RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NjQzMTcsImV4cCI6MjA2NjA0MDMxN30.1wd_w4yYuyoOXCTOfj0-_xyN4oZNx31bk_wFQPAC4aQ";
 
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
