@@ -1,6 +1,10 @@
-const SUPABASE_URL = 'https://uwayfesxnspreclmsotg.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3YXlmZXN4bnNwcmVjbG1zb3RnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NjQzMTcsImV4cCI6MjA2NjA0MDMxN30.1wd_w4yYuyoOXCTOfj0-_xyN4oZNx31bk_wFQPAC4aQ';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.PUBLIC_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
+
 let current_user = null;
 
 async function signInWithGithub() {
